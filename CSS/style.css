@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+}
+body{
+  font-family: 'Epilogue', sans-serif;
+}
+
+/* Estilos específicos para el gestor de presupuestos*/
+
+.converter{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #033C5B;
+}
+h1{
+  color: white;
+}
+#Form{
+  display: flex;
+  flex-direction: column;
+}
+.valor{
+  padding:  0 0 0 10px;
+  width: 220px;
+  border-radius: 10px;
+  height: 45px;
+  margin-bottom: 5px;
+}
+.operacion{
+  display: flexs;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+#Resultado{
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid black;
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+}
+/*Modal de agregar presupuesto*/
+.modal_one{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #3f4c6b3d;
+  position: absolute;
+  overflow: hidden;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px;
+  background: #4d566e;
+  background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);
+  background: linear-gradient(to right, #3f4c6b, #606c88);
+  border-radius: 10px;
+  box-shadow: 0px 87px 78px -39px rgba(0,0,0,0.4);
+  max-width: 320px;
+  max-height: 300;
+}
+
+.info {
+  margin-bottom: 10px;
+}
+
+.title {
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.description {
+  color: #fff;
+  margin-top: 10px;
+  font-size: 15px;
+}
+.inputs{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputs input{
+  display: flex;
+  height: 45px;
+  padding: 0 0 0 10px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  border: none;
+}
+.inputs .value{
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  width: 100px;
+  align-items: center;
+  text-align: center;
+  height: 35px;
+  background-color: #3f4c6b;
+  color: white;
+}
+.end{
+  display: flex;
+  justify-content: end;
+}
+.mostrar{
+  display: flex;
+}
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #224497;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 5px;
+  transition: .3s ease;
+}
+
+.close:hover {
+  background-color: rgba(255, 0, 0, 0.603);
+}
+@media (min-width:768px) {
+ 
+}
