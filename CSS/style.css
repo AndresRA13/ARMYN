@@ -32,9 +32,8 @@
   font-weight: bold;
   align-items: center;
   color: wheat;
-  border: 1px solid white;
-  width: 100px;
-  height: 45px;
+  width: 200px;
+  height: 30px;
   margin-bottom: 10px;
   padding: 0 0 0 5px;
 }
@@ -233,9 +232,7 @@ h1{
   color: #ffffff;
 }
 
-.history {
 
-}
 
 .history_item {
   display: flex;
@@ -282,9 +279,10 @@ h1{
 
 
 
+
 /*modal agregar saldo*/
 .modal__add{
-display: none;
+display: flex;
 }
 /*Formulario de el modal add presupuesto*/
 #Form{
