@@ -1,5 +1,18 @@
 
+/*funcionalidad del modal de agregar presupuesto */
+const Close =  document.querySelector('.close');
+const abrir = document.querySelector('.addPresupuesto');
+const modal = document.querySelector('.modal_one');
 
+abrir.addEventListener('click', () => {
+    modal.classList.add('mostrar');
+    Close.classList.add('mostrar');  // Agrega la clase 'mostrar' a Close
+});
+
+Close.addEventListener('click', () => {
+    modal.classList.remove('mostrar');
+    Close.classList.remove('mostrar');  // Quita la clase 'mostrar' de Close
+});
 
 // Obtener elementos del DOM
 let form = document.querySelector('.inputs');
@@ -28,6 +41,8 @@ form.addEventListener('submit', (e) => {
         // Si no hay resultado almacenado, mostrar un mensaje de error o realizar alguna acción
         console.error('No se encontró un resultado almacenado en el localStorage');
     }
+    modal.classList.remove('mostrar');
+    Close.classList.remove('mostrar');
 });
 
 // Cargar el resultado almacenado al cargar la página
@@ -38,22 +53,5 @@ if (storeResult !== null) {
 
 
 
-
-
-
-/*funcionalidad del modal de agregar presupuesto */
-const Close =  document.querySelector('.close');
-const abrir = document.querySelector('.addPresupuesto');
-const modal = document.querySelector('.modal_one');
-
-abrir.addEventListener('click', () => {
-    modal.classList.add('mostrar');
-    Close.classList.add('mostrar');  // Agrega la clase 'mostrar' a Close
-});
-
-Close.addEventListener('click', () => {
-    modal.classList.remove('mostrar');
-    Close.classList.remove('mostrar');  // Quita la clase 'mostrar' de Close
-});
 
 
