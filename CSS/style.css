@@ -53,7 +53,7 @@ flex-direction: column;
   margin-bottom: 10px;
   margin-left: 15px;
 }
-button {
+.add {
   --color: rgb(14, 118, 167);
   font-family: inherit;
   display: flex;
@@ -71,7 +71,7 @@ button {
   position: relative;
 }
 
-button::before {
+.add::before {
   position: absolute;
   content: "";
   background: var(--color);
@@ -81,17 +81,17 @@ button::before {
   border-radius: 50%;
 }
 
-button:hover {
+.add:hover {
   color: white;
 }
 
-button:before {
+.add:before {
   top: 100%;
   left: 100%;
   transition: .3s all;
 }
 
-button:hover::before {
+.add:hover::before {
   top: -30px;
   left: -30px;
 }
@@ -111,6 +111,7 @@ h1{
   background-color: #3f4c6b3d;
   position: absolute;
   overflow: hidden;
+  z-index: 10;
 }
 .form {
   display: flex;
@@ -128,6 +129,7 @@ h1{
 
 .info {
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .title {
@@ -229,11 +231,40 @@ h1{
 }
 
 
-
+.history_item span {
+  color: #fff;
+  font-weight: bold;
+}
 .history_item .amount {
   color: #e42626;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+/* Estilos adicionales para el botón de eliminar */
+
+.delete_btn {
+  background-color: #e44d26;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.delete_btn:hover {
+  background-color: #c5381f;
+}
+
+
+
+
+
+
+
+
 /*modal agregar saldo*/
 .modal__add{
 display: none;
