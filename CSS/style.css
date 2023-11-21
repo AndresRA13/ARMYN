@@ -6,21 +6,22 @@
   box-sizing: border-box;
   font-family: 'poppins', sans-serif;
 }
-body{
-  font-family: 'Epilogue', sans-serif;
-}
 
-/* Estilos específicos para el panel principal de administración*/
+/* Estilos específicos para el panel principal de administración general*/
 .converter{
   display: flex;
+  position: fixed;
+  top: 8vh;
   width: 100%;
-  height: 30vh;
+  height: 22vh;
   justify-content: end;
   flex-direction: column;
   background-color: #033C5B;
 }
 .container__main{
   display: flex;
+  position: relative;
+  z-index: 1;
   flex-direction: column;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -33,10 +34,11 @@ body{
   color: wheat;
   border: 1px solid white;
   width: 100px;
-  height: 50px;
+  height: 45px;
   margin-bottom: 10px;
   padding: 0 0 0 5px;
 }
+/*contenedor de los datos*/
 .usd_data{
 display: flex;
 margin-left: 15px;
@@ -45,7 +47,7 @@ flex-direction: column;
 .usd_data h1{
   font-size: 20px;
 }
-/*Botones*/
+/* contenedor de los Botones*/
 .serie_btns{
   display: flex;
   margin-bottom: 10px;
@@ -95,26 +97,6 @@ button:hover::before {
 }
 h1{
   color: white;
-}
-/*Formulario de el modal add presupuesto*/
-#Form{
-  display: flex;
-  flex-direction: column;
-}
-.valor{
-  padding:  0 0 0 10px;
-  width: 220px;
-  border-radius: 10px;
-  height: 45px;
-  margin-bottom: 5px;
-}
-.operacion{
-  display: flexs;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  height: 40px;
-  margin-bottom: 10px;
 }
 
 /*Modal de agregar presupuesto*/
@@ -211,19 +193,83 @@ h1{
 .close:hover {
   background-color: rgba(255, 0, 0, 0.603);
 }
-/*Seccion del historial*/
-.section_history{
+/*Sección de espacio para que no se sobreponga*/
+.space{
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 50vh;
-  background-color: #022131;
+  height: 30vh;
+}
+/*Seccion del historial general de las transacciónes*/
+.section_history {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #033C5B;
+
+}
+
+.section_history h1 {
+  text-align: center;
+  color: #ffffff;
+}
+
+.history {
+
+}
+
+.history_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  margin: 0 10px 0px 10px;
+}
+
+
+
+.history_item .amount {
+  color: #e42626;
+  font-weight: bold;
+}
+/*modal agregar saldo*/
+.modal__add{
+display: none;
+}
+/*Formulario de el modal add presupuesto*/
+#Form{
+  display: flex;
+  flex-direction: column;
+}
+.valor{
+  padding:  0 0 0 10px;
+  width: 220px;
+  border-radius: 10px;
+  height: 45px;
+  margin-bottom: 5px;
+}
+.operacion{
+  display: flexs;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+  margin-bottom: 10px;
 }
 @media screen and (max-width:768px) {
   /*dashborad admin*/
   .converter{
     display: flex;
+    position: fixed;
+    top: 8vh;
     width: 100%;
-    height: 30vh;
+    height: 25vh;
 
   }
- 
+  .space{
+    width: 100%;
+    height: 33vh;
+  }
 }
