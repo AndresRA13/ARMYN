@@ -13,7 +13,7 @@ form.addEventListener('submit', (e) => {
     let resultado;
     switch (operacion) {
         case '+':
-            resultado = valorOneValue + valorTwoValue;
+            resultado = '$ ' +  valorOneValue + valorTwoValue;
             break;
         case '-':
             resultado = valorOneValue - valorTwoValue;
