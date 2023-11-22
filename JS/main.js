@@ -31,7 +31,25 @@ closeBtn.addEventListener('click', (e)=> {
     modalBit.classList.remove('mostrar');
     closeBtn.classList.remove('mostrar');
 
-})
+});
+
+/**Modal de restar las ganancias o gastos*/
+const closeBTN =  document.querySelector('.closeBTN');
+const openBTN =  document.querySelector('.openBTN');
+const modalDelete =  document.querySelector('.modal_delete');
+openBTN.addEventListener('click', (e) =>{
+    e.preventDefault();
+    modalDelete.classList.add('mostrar');
+    closeBTN.classList.add('mostrar');
+    
+    
+});
+closeBTN.addEventListener('click', (e)=> {
+    e.preventDefault();
+    modalDelete.classList.remove('mostrar');
+    closeBTN.classList.remove('mostrar');
+
+});
 
 
 function formatToCOP(valor) {
