@@ -112,6 +112,20 @@ h1{
   overflow: hidden;
   z-index: 10;
 }
+/*Modal donde agrego las ganancias*/
+.modal__add{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #3f4c6b3d;
+  position: absolute;
+  overflow: hidden;
+  z-index: 10;
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -144,7 +158,7 @@ h1{
   margin-top: 10px;
   font-size: 15px;
 }
-.inputs{
+.newInputs{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,7 +175,7 @@ h1{
   font-size: 25px;
 }
 
-.inputs input{
+.newInputs input{
   display: flex;
   height: 45px;
   padding: 0 0 0 30px;
@@ -170,7 +184,7 @@ h1{
   border: none;
   font-size: 18px;
 }
-.inputs .value{
+.newInputs .value{
   display: flex;
   justify-content: center;
   padding: 0;
@@ -194,7 +208,7 @@ h1{
 .mostrar{
   display: flex;
 }
-.close {
+.edit {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,7 +222,7 @@ h1{
   transition: .3s ease;
 }
 
-.close:hover {
+.edit:hover {
   background-color: rgba(255, 0, 0, 0.603);
 }
 /*Sección de espacio para que no se sobreponga*/
@@ -274,36 +288,8 @@ h1{
 
 
 
-
-
-
-
-
-
-/*modal agregar saldo*/
-.modal__add{
-display: flex;
-}
 /*Formulario de el modal add presupuesto*/
-#Form{
-  display: flex;
-  flex-direction: column;
-}
-.valor{
-  padding:  0 0 0 10px;
-  width: 220px;
-  border-radius: 10px;
-  height: 45px;
-  margin-bottom: 5px;
-}
-.operacion{
-  display: flexs;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  height: 40px;
-  margin-bottom: 10px;
-}
+
 @media screen and (max-width:768px) {
   /*dashborad admin*/
   .converter{
