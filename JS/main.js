@@ -185,5 +185,12 @@ document.querySelector('.deleteForm').addEventListener('submit', function (e) {
   }
   
 
+// Función para eliminar todo el almacenamiento local
+const btnClean =  document.querySelector('.btnEliminar');
+btnClean.addEventListener('click', (e) =>{
+    localStorage.clear();
+    console.log("Se ha eliminado todo el almacenamiento local.");
+    location.reload();
+})
 
 
