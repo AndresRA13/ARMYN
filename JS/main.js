@@ -1,3 +1,8 @@
+
+
+
+/*Funcion */
+
 /*FUNCIOANLIDAD DE LOS MODALES */
 /*funcionalidad del modal de agregar presupuesto */
 const Close = document.querySelector('.close');
