@@ -1,8 +1,9 @@
 
-let spaceHeight =  document.querySelector('.space');
-spaceHeight.style.height = '8vh';
+
 let converter = document.querySelector('.converter');
 converter.style.display = 'none';
+
+
 
 // mostrar historial en el dom
 
@@ -10,33 +11,92 @@ converter.style.display = 'none';
 
 /*FUNCIOANLIDAD DE LOS MODALES */
 /*funcionalidad del modal de agregar presupuesto */
+/*funcionalidad del modal de agregar presupuesto */
+const Close = document.querySelector('.close');
+const abrir = document.querySelector('.addPresupuesto');
+const modal = document.querySelector('.modal_one');
+
+abrir.addEventListener('click', () => {
+    modal.classList.add('mostrar');
+    Close.classList.add('mostrar');  // Agrega la clase 'mostrar' a Close
+});
+
+Close.addEventListener('click', () => {
+    modal.classList.remove('mostrar');
+    Close.classList.remove('mostrar');  // Quita la clase 'mostrar' de Close
+});
+
+
+/**Modal de agregar ganancias*/
+const closeBtn = document.querySelector('.closeBtn');
+const abrirBtn = document.querySelector('.abrirBtn');
+const modalBit = document.querySelector('.modal__add');
+
+abrirBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modalBit.classList.add('mostrar');
+    closeBtn.classList.add('mostrar');
+
+
+});
+closeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modalBit.classList.remove('mostrar');
+    closeBtn.classList.remove('mostrar');
+
+});
+
+
+/**Modal de restar las ganancias o gastos*/
+const closeBTN = document.querySelector('.closeBTN');
+const openBTN = document.querySelector('.openBTN');
+const modalDelete = document.querySelector('.modal_delete');
+openBTN.addEventListener('click', (e) => {
+    e.preventDefault();
+    modalDelete.classList.add('mostrar');
+    closeBTN.classList.add('mostrar');
+
+
+});
+closeBTN.addEventListener('click', (e) => {
+    e.preventDefault();
+    modalDelete.classList.remove('mostrar');
+    closeBTN.classList.remove('mostrar');
+
+});
 
 
 
 
 document.addEventListener('DOMContentLoaded', function () {
-   // Evento de envío del formulario de Presupuesto
+  // Evento de envío del formulario de Presupuesto
 document.querySelector('.inputs').addEventListener('submit', function (e) {
-  e.preventDefault();
-  agregarAlHistorial('Presupuesto', '', parseFloat(document.querySelector('.pres_add').value));
+ e.preventDefault();
+ modal.classList.remove('mostrar');
+   Close.classList.remove('mostrar');
+ agregarAlHistorial('Presupuesto', '', parseFloat(document.querySelector('.pres_add').value));
 });
 
-  // Evento de envío del formulario de Ganancia
+ // Evento de envío del formulario de Ganancia
 document.querySelector('.newInputs').addEventListener('submit', function (e) {
-  e.preventDefault();
-  // Obtener el valor del campo de descripción
-  let descripcion = document.querySelector('.newInputs .descrip').value;
-  // Llamar a la función agregarAlHistorial con el tipo, mensaje y monto
-  agregarAlHistorial('Ganancia', descripcion, parseFloat(document.querySelector('.newInputs input[type="text"]').value));
+ e.preventDefault();
+ // Obtener el valor del campo de descripción
+ let descripcion = document.querySelector('.newInputs .descrip').value;
+ modalBit.classList.remove('mostrar');
+ closeBtn.classList.remove('mostrar');
+ // Llamar a la función agregarAlHistorial con el tipo, mensaje y monto
+ agregarAlHistorial('Ganancia', descripcion, parseFloat(document.querySelector('.newInputs input[type="text"]').value));
 });
 
 // Evento de envío del formulario de Gasto
 document.querySelector('.deleteForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  // Obtener el valor del campo de descripción
-  let descripcion = document.querySelector('.deleteForm .descripcion').value;
-  // Llamar a la función agregarAlHistorial con el tipo, mensaje y monto
-  agregarAlHistorial('Gasto', descripcion, -parseFloat(document.querySelector('.deleteForm input[type="text"]').value));
+ e.preventDefault();
+ // Obtener el valor del campo de descripción
+ let descripcion = document.querySelector('.deleteForm .descripcion').value;
+ modalDelete.classList.remove('mostrar');
+ closeBTN.classList.remove('mostrar');
+ // Llamar a la función agregarAlHistorial con el tipo, mensaje y monto
+ agregarAlHistorial('Gasto', descripcion, -parseFloat(document.querySelector('.deleteForm input[type="text"]').value));
 });
 
    

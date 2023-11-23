@@ -1,7 +1,4 @@
 
-let spaceHeight = document.querySelector('.space');
-spaceHeight.style.height = '27vh';
-
 
 /*Funcion */
 
@@ -142,6 +139,8 @@ document.querySelector('.deleteForm').addEventListener('submit', function (e) {
       // Mostrar el historial en la página
       mostrarHistorialEnPagina();
     }
+
+    
   
    // Función para mostrar el historial en la página
 function mostrarHistorialEnPagina() {

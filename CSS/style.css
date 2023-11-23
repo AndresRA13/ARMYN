@@ -15,8 +15,9 @@ body{
 .converter{
   display: flex;
   position: fixed;
-  top: 8vh;
-  width: 100%;
+  top: 0vh;
+  left: 20%;
+  width: 80%;
   height: 22vh;
   justify-content: end;
   flex-direction: column;
@@ -113,7 +114,7 @@ h1{
   top: 0;
   left: 0;
   background-color: #3f4c6b3d;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   z-index: 10;
 }
@@ -127,7 +128,7 @@ h1{
   top: 0;
   left: 0;
   background-color: #3f4c6b3d;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   z-index: 10;
 }
@@ -138,10 +139,10 @@ h1{
   justify-content: center;
   width: 100%;
   height: 100vh;
-  top: 0;
+  top: 0vh;
   left: 0;
   background-color: #3f4c6b3d;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   z-index: 10;
 }
@@ -264,21 +265,35 @@ h1{
 
 }
 /*Sección de espacio para que no se sobreponga*/
-.space{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 30vh;
-}
+
 /*Seccion del historial general de las transacciónes*/
 .section_history {
   display: flex;
+  z-index: -1;
+  position: relative;
+  top: 14vh;
   flex-direction: column;
-  width: 100%;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,63,144,1) 100%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
+  margin-left: 20%;
+  width: 80%;
+  height: auto;
 
 }
+.section_historyy{
+  display: flex;
+  z-index: -1;
+  position: relative;
+  top: 0vh;
+  flex-direction: column;
+  margin-left: 20%;
+  width: 80%;
+  height: auto;
+
+}
+.section_historyy h1 {
+  text-align: center;
+  color: #ffffff;
+}
+
 
 .section_history h1 {
   text-align: center;
@@ -298,8 +313,10 @@ h1{
 }
 
 .history h1{
-  font-size: 15px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.678);
 }
+
 .history_item span {
   color: #fff;
   font-weight: bold;
@@ -342,12 +359,44 @@ h1{
     display: flex;
     position: fixed;
     top: 8vh;
+    left: 0;
     width: 100%;
     height: 20vh;
 
   }
-  .space{
+
+  /*Seccion de el historial*/
+  .section_history {
+    display: flex;
+    z-index: -1;
+    position: relative;
+    top: 18vh;
+    flex-direction: column;
+    margin-left: 0%;
     width: 100%;
-    height: 28vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,63,144,1) 100%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
+  
   }
+  .section_historyy {
+    display: flex;
+    z-index: -1;
+    position: relative;
+    top: 8vh;
+    flex-direction: column;
+    margin-left: 0%;
+    width: 100%;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,63,144,1) 100%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
+  
+  }
+  .section_history h1 {
+    font-size: 28px;
+    color: #ffffff;
+  }
+  .history h1{
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.623);
+  }
+
 }
