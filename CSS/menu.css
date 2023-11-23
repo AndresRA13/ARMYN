@@ -9,7 +9,8 @@
   height: 8vh;
   align-items: center;
   justify-content: space-between;
-  background-color: #021D3B;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(2,20,46,1) 100%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
 
 }
 .nav__menu{
@@ -18,6 +19,9 @@
   justify-content: end;
   align-items: end;
   margin-right: 15px;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(2,20,46,1) 100%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
+  
 }
 .nav__list{
   display: flex;

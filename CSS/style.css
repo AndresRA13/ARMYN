@@ -7,7 +7,8 @@
   font-family: 'poppins', sans-serif;
 }
 body{
-  background-color: #033C5B;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,63,144,1) 100%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
 }
 
 /* Estilos específicos para el panel principal de administración general*/
@@ -19,7 +20,8 @@ body{
   height: 22vh;
   justify-content: end;
   flex-direction: column;
-  background-color: #033C5B;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,63,144,1) 100%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
 }
 .container__main{
   display: flex;
@@ -150,10 +152,9 @@ h1{
   flex-direction: column;
   overflow: hidden;
   padding: 20px;
-  background: #4d566e;
-  background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);
-  background: linear-gradient(to right, #3f4c6b, #606c88);
-  border-radius: 10px;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(2,20,46,1) 100%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
+  border-radius: 15px;
   box-shadow: 0px 87px 78px -39px rgba(0,0,0,0.4);
   max-width: 320px;
   max-height: 300;
@@ -193,6 +194,7 @@ h1{
   top: 12px;
   left: 10px;
   font-size: 25px;
+  color: white;
 }
 .input_field .i{
   position: absolute;
@@ -210,6 +212,12 @@ h1{
   border-radius: 10px;
   border: none;
   font-size: 18px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+::-webkit-input-placeholder{
+  color: rgba(255, 255, 255, 0.63);
 }
 .newInputs .value{
   display: flex;
@@ -239,7 +247,8 @@ h1{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #224497;
+  color: white;
+  background-color: #3f4c6b;
   height: 30px;
   width: 30px;
   border-radius: 50%;
@@ -250,7 +259,9 @@ h1{
 }
 
 .edit:hover {
-  background-color: rgba(255, 0, 0, 0.603);
+  background-color: rgba(255, 255, 255, 0.89);
+  color: black;
+
 }
 /*Sección de espacio para que no se sobreponga*/
 .space{
@@ -264,7 +275,8 @@ h1{
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: #033C5B;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,63,144,1) 100%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
 
 }
 
