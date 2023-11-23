@@ -1,4 +1,6 @@
 
+let spaceHeight = document.querySelector('.space');
+spaceHeight.style.height = '27vh';
 
 
 /*Funcion */
@@ -64,6 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
    // Evento de envío del formulario de Presupuesto
 document.querySelector('.inputs').addEventListener('submit', function (e) {
   e.preventDefault();
+  modal.classList.remove('mostrar');
+    Close.classList.remove('mostrar');
   agregarAlHistorial('Presupuesto', '', parseFloat(document.querySelector('.pres_add').value));
 });
 
@@ -72,6 +76,8 @@ document.querySelector('.newInputs').addEventListener('submit', function (e) {
   e.preventDefault();
   // Obtener el valor del campo de descripción
   let descripcion = document.querySelector('.newInputs .descrip').value;
+  modalBit.classList.remove('mostrar');
+  closeBtn.classList.remove('mostrar');
   // Llamar a la función agregarAlHistorial con el tipo, mensaje y monto
   agregarAlHistorial('Ganancia', descripcion, parseFloat(document.querySelector('.newInputs input[type="text"]').value));
 });
@@ -81,6 +87,8 @@ document.querySelector('.deleteForm').addEventListener('submit', function (e) {
   e.preventDefault();
   // Obtener el valor del campo de descripción
   let descripcion = document.querySelector('.deleteForm .descripcion').value;
+  modalDelete.classList.remove('mostrar');
+  closeBTN.classList.remove('mostrar');
   // Llamar a la función agregarAlHistorial con el tipo, mensaje y monto
   agregarAlHistorial('Gasto', descripcion, -parseFloat(document.querySelector('.deleteForm input[type="text"]').value));
 });
@@ -128,7 +136,6 @@ document.querySelector('.deleteForm').addEventListener('submit', function (e) {
   
       // Almacenar el historial actualizado en el localStorage
       localStorage.setItem('historial', JSON.stringify(historial));
-  
       // Actualizar el valor total
       actualizarTotal();
   
@@ -136,31 +143,36 @@ document.querySelector('.deleteForm').addEventListener('submit', function (e) {
       mostrarHistorialEnPagina();
     }
   
-    // Función para mostrar el historial en la página
-    function mostrarHistorialEnPagina() {
-      // Obtener el historial actual del localStorage
-      let historial = JSON.parse(localStorage.getItem('historial')) || [];
-    
-      // Obtener el div del historial
-      let historialDiv = document.querySelector('.history');
-    
-      // Limpiar el contenido actual del historialDiv
-      historialDiv.innerHTML = '';
-    
-      // Iterar sobre cada elemento del historial y mostrarlo en la página
-      historial.forEach(item => {
-        let nuevoElemento = document.createElement('div');
-        nuevoElemento.className = 'history_item';
-    
-        // Agregar la clase "gasto" si el tipo es Gasto
-        if (item.tipo === 'Gasto') {
-          nuevoElemento.classList.add('gasto');
-        }
-    
-        nuevoElemento.innerHTML = `<span>${item.tipo}: <br> ${item.mensaje}</span><span class="amount">${formatToCOP(item.monto)}</span><button class="delete_btn">Eliminar</button>`;
-        historialDiv.appendChild(nuevoElemento);
-      });
-    }
+   // Función para mostrar el historial en la página
+function mostrarHistorialEnPagina() {
+  // Obtener el historial actual del localStorage
+  let historial = JSON.parse(localStorage.getItem('historial')) || [];
+
+  // Obtener el div del historial
+  let historialDiv = document.querySelector('.history');
+
+  // Limpiar el contenido actual del historialDiv
+  historialDiv.innerHTML = '';
+
+  // Verificar si hay elementos en el historial
+  if (historial.length > 0) {
+    historial.forEach(item => {
+      let nuevoElemento = document.createElement('div');
+      nuevoElemento.className = 'history_item';
+
+      // Agregar la clase "gasto" si el tipo es Gasto
+      if (item.tipo === 'Gasto') {
+        nuevoElemento.classList.add('gasto');
+      }
+
+      nuevoElemento.innerHTML = `<span>${item.tipo}: <br> ${item.mensaje}</span><span class="amount">${formatToCOP(item.monto)}</span><button class="delete_btn">Eliminar</button>`;
+      historialDiv.appendChild(nuevoElemento);
+    });
+  } else {
+    // Si no hay elementos en el historial, mostrar un mensaje
+    historialDiv.innerHTML = '<h1>No has agregado un presupuesto</h1>';
+  }
+}
     
   
     // Función para actualizar el valor total
@@ -191,11 +203,50 @@ document.querySelector('.deleteForm').addEventListener('submit', function (e) {
   
 
 // Función para eliminar todo el almacenamiento local
-const btnClean =  document.querySelector('.btnEliminar');
-btnClean.addEventListener('click', (e) =>{
-    localStorage.clear();
-    console.log("Se ha eliminado todo el almacenamiento local.");
-    location.reload();
-})
+const btnClean = document.querySelector('.btnEliminar');
+btnClean.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  // Verificar si hay elementos en el historial antes de eliminar
+  if (localStorage.getItem('historial')) {
+    // Mostrar SweetAlert2 con un mensaje
+    Swal.fire({
+      title: 'Eliminar historial',
+      text: '¿Estás seguro de que deseas eliminar todo el historial?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Eliminar todo el almacenamiento local
+        localStorage.clear();
+        console.log("Se ha eliminado todo el almacenamiento local.");
+
+        // Mostrar un mensaje de éxito después de la eliminación
+        Swal.fire({
+          title: 'Historial eliminado',
+          text: 'Has eliminado completamente el historial.',
+          icon: 'success',
+        }).then(() => {
+          // Recargar la página desde el servidor
+          location.reload(true);
+        });
+      }
+    });
+  } else {
+    // Mostrar SweetAlert2 indicando que no hay historial para eliminar
+    Swal.fire({
+      title: 'Sin historial',
+      text: 'No hay historial para eliminar.',
+      icon: 'info',
+    });
+  }
+});
+
+
+
 
 

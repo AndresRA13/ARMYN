@@ -34,10 +34,10 @@
         </li>
 
         <li class="nav__item">
-          <a href="#skills" class="nav__link">
-            <i class='bx bx-book-alt nav__icon'></i>
-            <span class="nav__name">Skills</span>
-          </a>
+          <p class="nav__link btnEliminar">
+            <i class="fa-solid fa-trash"></i>
+            <span class="nav__name">Clean</span>
+          </p>
         </li>
 
         <li class="nav__item">
@@ -60,7 +60,21 @@
   </nav>
 
 
-  
+  <div class="converter">
+    <div class="container__main">
+      <div class="usd_data">
+        <h1>Saldo disponible </h1>
+        <p id="Resultado">$0 </p>
+      </div>
+      <div class="serie_btns">
+        <button class="addPresupuesto add">Deposito</button>
+        <button class="add abrirBtn">Ganancia</button>
+        <button class="add openBTN">Gasto</button>
+        <button class="add btnEliminar">Limpiar</button>
+      </div>
+      <hr>
+    </div>
+  </div>
   <div class="space"></div>
   
   <div class="section_history">
@@ -69,12 +83,88 @@
     <div class="history">
       
       
-    </div>
+      </div>
       <!-- Agrega más elementos según sea necesario con jasvascript -->
     </div>
   </div>
 
-</body>
 
+
+  <div class="modal__add">
+    <div class="form">
+      <div class="end">
+        <span class="edit closeBtn">X</span>
+      </div>
+
+      <div class="info">
+        <span class="title">Agregar ganancias</span>
+        <p class="description">Porfavor escribe el monto que deseas agregar al disponible</p>
+      </div>
+      <form class="inputForm newInputs">
+        <div class="input_field">
+          <input type="text" placeholder="0">
+          <i class="fa-solid fa-dollar-sign"></i>
+        </div>
+        <div class="input_field">
+          <input type="text" placeholder="Descripción" class="descrip">
+          <i class="fa-solid fa-message i"></i>
+        </div>
+        <input type="submit" class="value" value="Agregar">
+      </form>
+
+    </div>
+  </div>
+
+  <div class="modal_delete">
+    <div class="form">
+      <div class="end">
+        <span class="edit closeBTN">X</span>
+      </div>
+
+      <div class="info">
+        <span class="title">Agregar gastos</span>
+        <p class="description">Porfavor escribe el monto que deseas restar de tu disponible</p>
+      </div>
+      <form class="deleteForm newInputs">
+        <div class="input_field">
+          <input type="text" placeholder="0">
+          <i class="fa-solid fa-dollar-sign"></i>
+        </div>
+        <div class="input_field">
+          <input type="text" placeholder="Descripción" class="descripcion">
+          <i class="fa-solid fa-message i"></i>
+        </div>
+        <input type="submit" class="value" value="Restar">
+      </form>
+
+    </div>
+  </div>
+
+
+  <div class="modal_one">
+    <div class="form">
+      <div class="end">
+        <span class="edit close">X</span>
+      </div>
+
+      <div class="info">
+        <span class="title">Agregar presupuesto</span>
+        <p class="description">Porfavor escribe el monto que deseas agregar al disponible</p>
+      </div>
+      <form class="inputs newInputs">
+        <div class="input_field">
+          <input type="text" placeholder="0" class="pres_add">
+          <i class="fa-solid fa-dollar-sign"></i>
+        </div>
+        <input type="submit" class="value" value="Agregar">
+      </form>
+
+    </div>
+  </div>
+
+
+
+</body>
+<script src="/JS/history.js"></script>
 
 </html>
