@@ -4,7 +4,6 @@ let converter = document.querySelector('.converter');
 converter.style.display = 'none';
 
 
-
 // mostrar historial en el dom
 
 /*Funcion */
