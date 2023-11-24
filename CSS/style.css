@@ -30,9 +30,12 @@ body {
   display: flex;
   position: relative;
   z-index: 1;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+.hr{
+  display: none;
 }
 
 #Resultado {
