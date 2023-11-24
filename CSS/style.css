@@ -278,17 +278,7 @@ h1{
   height: auto;
 
 }
-.section_historyy{
-  display: flex;
-  z-index: -1;
-  position: relative;
-  top: 0vh;
-  flex-direction: column;
-  margin-left: 20%;
-  width: 80%;
-  height: auto;
 
-}
 .section_historyy h1 {
   text-align: center;
   color: #ffffff;
@@ -378,18 +368,7 @@ h1{
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,63,144,1) 100%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
   
   }
-  .section_historyy {
-    display: flex;
-    z-index: -1;
-    position: relative;
-    top: 8vh;
-    flex-direction: column;
-    margin-left: 0%;
-    width: 100%;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,63,144,1) 100%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
-  
-  }
+ 
   .section_history h1 {
     font-size: 28px;
     color: #ffffff;
