@@ -57,7 +57,6 @@ closeBTN.addEventListener('click', (e) => {
 
 });
 
-
 document.addEventListener('DOMContentLoaded', function () {
   // Evento de envío del formulario de Presupuesto
   document.querySelector('.inputs').addEventListener('submit', function (e) {
@@ -117,6 +116,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let historial = JSON.parse(localStorage.getItem('historial')) || [];
     let historialDiv = document.querySelector('.history');
     historialDiv.innerHTML = '';
+    
+    let totalGastos = 0;
+    let totalGanancias = 0;
 
     if (historial.length > 0) {
       historial.forEach(item => {
@@ -125,6 +127,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (item.tipo === 'Gasto') {
           nuevoElemento.classList.add('gasto');
+          totalGastos += item.monto;
+        } else if (item.tipo === 'Ganancia') {
+          nuevoElemento.classList.add('ganancia');
+          totalGanancias += item.monto;
         }
 
         nuevoElemento.innerHTML = `<span>${item.tipo}: <br> ${item.mensaje}</span><span class="amount">${formatToCOP(item.monto)}</span><button class="delete_btn">Eliminar</button>`;
@@ -133,6 +139,11 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       historialDiv.innerHTML = '<h1>No has agregado un presupuesto</h1>';
     }
+
+    // Mostrar totales de gastos, ganancias y depósito
+    document.querySelector('.gastos').textContent = `Gastos: ${formatToCOP(totalGastos)}`;
+    document.querySelector('.ganancias').textContent = `Ganancias: ${formatToCOP(totalGanancias)}`;
+    document.querySelector('.deposito').textContent = `Depósito: ${formatToCOP(actualizarDeposito())}`;
   }
 
   // Función para actualizar el valor total
@@ -143,10 +154,24 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.setItem('total', nuevoTotal);
   }
 
+  // Función para actualizar el valor del depósito
+  function actualizarDeposito() {
+    let historial = JSON.parse(localStorage.getItem('historial')) || [];
+    let deposito = historial.reduce((total, item) => {
+      if (item.tipo === 'Presupuesto') {
+        return total + item.monto;
+      }
+      return total;
+    }, 0);
+    localStorage.setItem('deposito', deposito);
+    return deposito;
+  }
+
   // Llamar a la función al cargar la página para mostrar el historial existente
   mostrarHistorialEnPagina();
-  // Llamar a la función al cargar la página para actualizar el valor total
+  // Llamar a la función al cargar la página para actualizar el valor total y del depósito
   actualizarTotal();
+  actualizarDeposito();
 });
 
 // Función para formatear a moneda colombiana
@@ -191,3 +216,4 @@ btnClean.addEventListener('click', (e) => {
     });
   }
 });
+
