@@ -60,9 +60,16 @@ flex-direction: column;
   margin-left: 15px;
   font-size: 15px;
 }
-.serie_btns span{
+.gastos_add{
+  color: red;
+}
+.deposito_add{
   color: aqua;
 }
+.ganancias_add{
+  color: aqua;
+}
+
 .serie_btns p{
   color: white;
 }
@@ -312,7 +319,7 @@ h1{
 
 .history h1{
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.678);
+  color: rgba(255, 255, 255, 0.904);
 }
 
 .history_item span {
@@ -322,12 +329,12 @@ h1{
 /* Estilo para Presupuesto y Ganancia (color azul) */
 /* Estilo para Presupuesto y Ganancia (color azul) */
 .history_item span.amount {
-  color: rgb(0, 195, 255);
+  color: rgb(189, 189, 189)
 }
 
 /* Estilo para Gasto (color rojo) */
 .history_item.gasto span.amount {
-  color: red;
+  color: rgba(255, 0, 0, 0.836);
 }
 
 

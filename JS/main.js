@@ -141,9 +141,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Mostrar totales de gastos, ganancias y depósito
-    document.querySelector('.gastos').textContent = `Gastos: ${formatToCOP(totalGastos)}`;
-    document.querySelector('.ganancias').textContent = `Ganancias: ${formatToCOP(totalGanancias)}`;
-    document.querySelector('.deposito').textContent = `Depósito: ${formatToCOP(actualizarDeposito())}`;
+    document.querySelector('.gastos').innerHTML = ` Gastos : <span class='gastos_add'> ${formatToCOP(totalGastos)}</span>`;
+    document.querySelector('.ganancias').innerHTML = `Ganancias: <span class ='ganancias_add'>${formatToCOP(totalGanancias)}</span>`;
+    document.querySelector('.deposito').innerHTML = `Deposito <span class='deposito_add'>${formatToCOP(actualizarDeposito())}</span>`;
+
   }
 
   // Función para actualizar el valor total
