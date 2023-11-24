@@ -6,13 +6,14 @@
   box-sizing: border-box;
   font-family: 'poppins', sans-serif;
 }
-body{
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,63,144,1) 100%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
+
+body {
+  background: rgb(4,0,74);
+  background: linear-gradient(90deg, rgba(4,0,74,1) 0%, rgba(0,4,80,1) 100%, rgba(0,3,8,1) 100%, rgba(9,9,121,1) 100%);
 }
 
 /* Estilos específicos para el panel principal de administración general*/
-.converter{
+.converter {
   display: flex;
   position: fixed;
   top: 0vh;
@@ -21,10 +22,11 @@ body{
   height: 25vh;
   justify-content: end;
   flex-direction: column;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,63,144,1) 100%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
+  background: rgb(2,0,43);
+  background: linear-gradient(90deg, rgba(2,0,43,1) 0%, rgba(0,2,45,1) 100%, rgba(0,3,8,1) 100%, rgba(9,9,121,1) 100%);
 }
-.container__main{
+
+.container__main {
   display: flex;
   position: relative;
   z-index: 1;
@@ -32,7 +34,8 @@ body{
   justify-content: space-around;
   flex-wrap: wrap;
 }
-#Resultado{
+
+#Resultado {
   display: flex;
   font-size: 20px;
   font-weight: bold;
@@ -43,36 +46,43 @@ body{
   margin-bottom: 10px;
   padding: 0 0 0 5px;
 }
+
 /*contenedor de los datos*/
-.usd_data{
-display: flex;
-margin-left: 15px;
-flex-direction: column;
+.usd_data {
+  display: flex;
+  margin-left: 15px;
+  flex-direction: column;
 }
-.usd_data h1{
+
+.usd_data h1 {
   font-size: 20px;
 }
+
 /* contenedor de los Botones*/
-.serie_btns{
+.serie_btns {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
   margin-left: 15px;
   font-size: 15px;
 }
-.gastos_add{
+
+.gastos_add {
   color: red;
 }
-.deposito_add{
-  color: aqua;
-}
-.ganancias_add{
+
+.deposito_add {
   color: aqua;
 }
 
-.serie_btns p{
+.ganancias_add {
+  color: aqua;
+}
+
+.serie_btns p {
   color: white;
 }
+
 .add {
   --color: rgb(14, 118, 167);
   font-family: inherit;
@@ -115,12 +125,13 @@ flex-direction: column;
   top: -30px;
   left: -30px;
 }
-h1{
+
+h1 {
   color: white;
 }
 
 /*Modal de agregar presupuesto*/
-.modal_one{
+.modal_one {
   display: none;
   align-items: center;
   justify-content: center;
@@ -133,8 +144,9 @@ h1{
   overflow: hidden;
   z-index: 10;
 }
+
 /*Modal donde agrego las ganancias*/
-.modal__add{
+.modal__add {
   display: none;
   align-items: center;
   justify-content: center;
@@ -147,8 +159,9 @@ h1{
   overflow: hidden;
   z-index: 10;
 }
+
 /*Modal delete*/
-.modal_delete{
+.modal_delete {
   display: none;
   align-items: center;
   justify-content: center;
@@ -168,10 +181,10 @@ h1{
   flex-direction: column;
   overflow: hidden;
   padding: 20px;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(2,20,46,1) 100%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(2, 20, 46, 1) 100%, rgba(9, 9, 121, 1) 100%, rgba(0, 212, 255, 1) 100%);
   border-radius: 15px;
-  box-shadow: 0px 87px 78px -39px rgba(0,0,0,0.4);
+  box-shadow: 0px 87px 78px -39px rgba(0, 0, 0, 0.4);
   max-width: 320px;
   max-height: 300;
 }
@@ -194,32 +207,36 @@ h1{
   margin-top: 10px;
   font-size: 15px;
 }
-.newInputs{
+
+.newInputs {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.input_field{
+
+.input_field {
   display: flex;
   flex-direction: column;
   position: relative;
 }
-.input_field i{
+
+.input_field i {
   position: absolute;
   top: 12px;
   left: 10px;
   font-size: 25px;
   color: white;
 }
-.input_field .i{
+
+.input_field .i {
   position: absolute;
   top: 14px;
   left: 5px;
   font-size: 20px;
 }
 
-.newInputs input{
+.newInputs input {
   display: flex;
   width: 250px;
   height: 45px;
@@ -232,10 +249,12 @@ h1{
   color: white;
   border: 1px solid white;
 }
-::-webkit-input-placeholder{
+
+::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.63);
 }
-.newInputs .value{
+
+.newInputs .value {
   display: flex;
   justify-content: center;
   padding: 0;
@@ -248,17 +267,21 @@ h1{
   margin-top: 5px;
   transition: .3s ease-in-out;
 }
-.value:hover{
+
+.value:hover {
   color: black;
   background-color: white;
 }
-.end{
+
+.end {
   display: flex;
   justify-content: end;
 }
-.mostrar{
+
+.mostrar {
   display: flex;
 }
+
 .edit {
   display: flex;
   align-items: center;
@@ -279,6 +302,7 @@ h1{
   color: black;
 
 }
+
 /*Sección de espacio para que no se sobreponga*/
 
 /*Seccion del historial general de las transacciónes*/
@@ -299,14 +323,12 @@ h1{
   color: #ffffff;
 }
 
-
 .section_history h1 {
   text-align: center;
   color: #ffffff;
 }
 
-
-
+/*Item del historial*/
 .history_item {
   display: flex;
   flex-direction: row;
@@ -317,7 +339,7 @@ h1{
   margin: 0 10px 0px 10px;
 }
 
-.history h1{
+.history h1 {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.904);
 }
@@ -326,8 +348,8 @@ h1{
   color: #fff;
   font-weight: bold;
 }
-/* Estilo para Presupuesto y Ganancia (color azul) */
-/* Estilo para Presupuesto y Ganancia (color azul) */
+
+/* Estilo para ganancias y presupuesto (color calido)*/
 .history_item span.amount {
   color: rgb(189, 189, 189)
 }
@@ -338,8 +360,7 @@ h1{
 }
 
 
-/* Estilos adicionales para el botón de eliminar */
-
+/* Estilos adicionales para el botón de eliminar  del historial */
 .delete_btn {
   background-color: #e44d26;
   color: white;
@@ -351,7 +372,7 @@ h1{
 }
 
 .delete_btn:hover {
-  background-color: #c5381f;
+  background-color: rgb(252, 38, 0)
 }
 
 
@@ -359,8 +380,9 @@ h1{
 /*Formulario de el modal add presupuesto*/
 
 @media screen and (max-width:768px) {
+
   /*dashborad admin*/
-  .converter{
+  .converter {
     display: flex;
     position: fixed;
     top: 8vh;
@@ -379,21 +401,23 @@ h1{
     flex-direction: column;
     margin-left: 0%;
     width: 100%;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,63,144,1) 100%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
-  
+    background: rgb(4,0,74);
+    background: linear-gradient(90deg, rgba(4,0,74,1) 0%, rgba(0,4,80,1) 100%, rgba(0,3,8,1) 100%, rgba(9,9,121,1) 100%);
+
   }
- 
+
   .section_history h1 {
     font-size: 28px;
     color: #ffffff;
   }
-  .history h1{
+
+  .history h1 {
     font-size: 15px;
     color: rgba(255, 255, 255, 0.623);
   }
+
   /*Adaptaciónes del usd data*/
-  .usd_data h1{
+  .usd_data h1 {
     font-size: 15px;
   }
 
