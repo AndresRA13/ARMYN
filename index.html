@@ -1,176 +1,2264 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/de820b69c2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <title>AR | Home</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/de820b69c2.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-  <title>AR | ADMIN</title>
-  <link rel="stylesheet" href="./CSS/style.css">
-  <link rel="stylesheet" href="./CSS/menu.css">
-  <link rel="icon" href="./images/simbolo-de-dolar.png">
-</head>
+  <body>
+    <nav class="nav container">
+      <p class="nav__img">ARSHOP</p>
 
-<body>
-  <nav class="nav container">
-     
-        <a href="#" class="nav__logo"> <img src="./images/simbolo-de-dolar.png" alt="">MY ADMIN</a>
-      
-    
+      <div class="nav__hamburguer"></div>
+
+      <div class="nav__overlay">
+        <ul class="nav__menu">
+          <li class="nav__item" onclick="redirectToPage('index');">
+            <a href="#" class="nav__link">Inicio</a>
+          </li>
+
+          <li class="nav__item">
+            <span class="nav__parent"
+              >Tienda
+              <img src="./images/icon-arrow-down.svg" class="nav__arrow" />
+            </span>
+
+            <ul class="nav__inner">
+              <li class="nav__dropdown" onclick="redirectToPage('shop');">
+                <a href="#" class="nav__link">
+                  <img src="./images/icon-todo.svg" class="nav__illustration" />
+                  Todo
+                </a>
+              </li>
+
+              <li class="nav__dropdown" onclick="redirectToPage('');">
+                <a href="#" class="nav__link">
+                  <img
+                    src="./images/icon-calendar.svg"
+                    class="nav__illustration"
+                  />
+                  Ropa Mujer
+                </a>
+              </li>
+
+              <li class="nav__dropdown" onclick="redirectToPage('');">
+                <a href="#" class="nav__link">
+                  <img
+                    src="./images/icon-reminders.svg"
+                    class="nav__illustration"
+                  />
+                  Ropa Hombre
+                </a>
+              </li>
+
+              <li class="nav__dropdown" onclick="redirectToPage('');">
+                <a href="#" class="nav__link">
+                  <img
+                    src="./images/icon-planning.svg"
+                    class="nav__illustration"
+                  />
+                  Ropa Niños
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav__item">
+            <span class="nav__parent"
+              >Blog
+              <img src="./images/icon-arrow-down.svg" class="nav__arrow" />
+            </span>
+
+            <ul class="nav__inner">
+              <li class="nav__dropdown" onclick="redirectToPage('blog');">
+                <a href="blog.html" class="nav__link">Blog</a>
+              </li>
+
+              <li class="nav__dropdown" onclick="redirectToPage('sobre');">
+                <a href="#" class="nav__link">Sobre Nosotros</a>
+              </li>
+
+              <li class="nav__dropdown" onclick="redirectToPage('politic');">
+                <a href="#" class="nav__link">Politicas y privacidad</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav__item" onclick="redirectToPage('contact');">
+            <a href="" class="nav__link">Contacto</a>
+          </li>
+
+       
+
+          <li class="nav__login" onclick="redirectToPage('car');">
+          
+             <button class="nav__sign">
+              <img src="./images/cart.svg" alt="">
+              <span>Carrito</span>
+             </button>
+           
+          </li>
 
 
-    <div class="nav__menu" id="nav-menu">
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a href="#home" class="nav__link active-link">
-            <i class='bx bx-home-alt nav__icon'></i>
-            <span class="nav__name">Inicio</span>
-          </a>
-        </li>
+          <div class="socials ">
+            <a href="#" class="socialContainer containerOne">
+              <svg class="socialSvg instagramSvg" viewBox="0 0 16 16"> <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path> </svg>
+            </a>
+            
+            <a href="#" class="socialContainer containerTwo">
+              <svg class="socialSvg twitterSvg" viewBox="0 0 16 16"> <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path> </svg>              </a>
+              
+            <a href="#" class="socialContainer containerThree">
+              <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
+            </a>
+            
+            <a href="#" class="socialContainer containerFour">
+              <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16"> <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path> </svg>
+            </a>
+          </div>             
+          
+          
 
-        <li class="nav__item abrirBtn">
-          <p class="nav__link">
-            <i class="fa-solid fa-dollar-sign"></i>
-            <span class="nav__name">Ganacia</span>
-          </p>
-        </li>
-
-        <li class="nav__item">
-          <p class="nav__link btnEliminar">
-            <i class="fa-solid fa-trash"></i>
-            <span class="nav__name">Vaciar</span>
-          </p>
-        </li>
-
-        <li class="nav__item">
-          <p class="nav__link addPresupuesto">
-            <i class="fa-solid fa-money-bill-transfer"></i>
-            <span class="nav__name">Depositar</span>
-          </p>
-        </li>
-
-        <li class="nav__item">
-          <p class="nav__link openBTN">
-            <i class="fa-solid fa-delete-left"></i>
-            <span class="nav__name">Gasto</span>
-          </p>
-        </li>
-      </ul>
-    </div>
-
-    <img src="assets/img/perfil.png" alt="" class="nav__img">
-  </nav>
-
-
-  <div class="converter">
-    <div class="container__main">
-      <div class="usd_data">
-        <h1>Saldo disponible </h1>
-        <p id="Resultado">$0 </p>
+        </ul>
       </div>
-      <div class="serie_btns">
-        <p class="deposito">deposito: 0</p>
-        <p class="gastos">Gastos:0</p>
-        <p class="ganancias">ganancias: 0</p>
-      </div>
-      <hr class="hr">
-    </div>
-  </div>
-  <div class="space"></div>
-  
-  <div class="section_history">
-    <br>
-    <h1>Historial</h1>
-    <div class="history">
-      
-      
-      </div>
-      <!-- Agrega más elementos según sea necesario con jasvascript -->
-    </div>
-  </div>
+    </nav>
 
+    <main class="main">
+      <section class="main__grid">
+        <picture class="main__picture">
+          <source
+            srcset="./images/image-hero-desktop.png"
+            class="main__img"
+            media="(min-width:768px)"
+          />
 
+          <img src="./images/image-hero-mobile.png" class="main__img" />
+        </picture>
 
-  <div class="modal__add">
-    <div class="form">
-      <div class="end">
-        <span class="edit closeBtn">X</span>
-      </div>
+        <article class="main__article">
+          <div class="main__texts">
+            <h1 class="main__title">The best online store!</h1>
+            <p class="main__paragraph">
+              Get your team in sync, no matter your location. Streamline
+              processes, create team rituals, and watch productivity soar.
+            </p>
+            <a href="#" class="main__cta">Learn more</a>
+          </div>
 
-      <div class="info">
-        <span class="title">Agregar ganancias</span>
-        <p class="description">Porfavor escribe el monto que deseas agregar al disponible</p>
-      </div>
-      <form class="inputForm newInputs">
-        <div class="input_field">
-          <input type="text" placeholder="0">
-          <i class="fa-solid fa-dollar-sign"></i>
+          <div class="main__brands">
+            <img src="./images/client-databiz.svg" class="main__brand" />
+            <img src="./images/client-audiophile.svg" class="main__brand" />
+            <img src="./images/client-meet.svg" class="main__brand" />
+            <img src="./images/client-maker.svg" class="main__brand" />
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!--Sección de muestra de solo los productos mas a fondo-->
+    <section class="product_view" id="section1">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(1);"
+          ></i>
         </div>
-        <div class="input_field">
-          <input type="text" placeholder="Descripción" class="descrip">
-          <i class="fa-solid fa-message i"></i>
+        <div class="img">
+          <img
+            src="https://www.vybavenitrost.cz/image/?w=450&h=450&i=https://www.vybavenitrost.cz/products/images/48/48-adidas-chlapecke-tricko-adidas-bile-4-1.jpg"
+            alt=""
+            class="main_img"
+            id="imagen1"
+          />
         </div>
-        <input type="submit" class="value" value="Agregar">
-      </form>
+        <div class="img_done">
+          <img
+            src="https://i.cdn.nrholding.net/46366830/2000/2000"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen1', this);" 
+          />
+          <img
+            src="https://www.bestform.cz/gallery/products/middle/9934.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen1', this);" 
+          />
+          <img
+            src="https://www.vybavenitrost.cz/image/?w=450&h=450&i=https://www.vybavenitrost.cz/products/images/48/48-adidas-chlapecke-tricko-adidas-bile-4-1.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen1', this);" 
+          />
+          <img
+            src="https://www.vybavenitrost.cz/image/?w=450&h=450&i=https://www.vybavenitrost.cz/products/images/48/48-adidas-chlapecke-tricko-adidas-bile-4-1.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen1', this);" 
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$13</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen1', 'Mens Fashion Tshirt', 13, 'Media', 'quantity1')">Add to Cart</button>
+        </div>
+        
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_view" id="section2">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(2);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://s.yimg.com/zp/MerchandiseImages/8B20609F11-SP-8717103.jpg"
+            alt=""
+            class="main_img"
+            id="imagen2"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://assets.adidas.com/images/w_600,f_auto,q_auto/c51dd9a5576841059d31a83500d4d926_9366/Camiseta_3_Rayas_Negro_CW1202_01_laydown.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen2', this);" 
+          />
+          <img
+            src="https://images-na.ssl-images-amazon.com/images/I/81OFVB3I73L._AC_UX342_.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen2', this);" 
+          />
+          <img
+            src="https://images-na.ssl-images-amazon.com/images/I/51CH81JtWiL.__AC_SY445_SX342_QL70_ML2_.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen2', this);" 
+          />
+          <img
+            src="https://cdn.shopify.com/s/files/1/0746/9445/products/AJ8834_03.JPG"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen2', this);" 
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirtsdsdsd</div>
+        <div class="price">$12</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen2')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_view" id="section3">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(3);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://ph-live-01.slatic.net/p/de3d1dfd64af42912963af91aca6d2d6.jpg"
+            alt=""
+            class="main_img"
+            id="imagen3"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://ph-live-01.slatic.net/p/de3d1dfd64af42912963af91aca6d2d6.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen3', this);" 
+          />
+          <img
+            src="https://sg-live-01.slatic.net/p/07964d7e810b9a213c2fdb17e2c15718.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen3', this);" 
+          />
+          <img
+            src="https://thumblr.uniid.it/product/157075/3461e000e61e.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen3', this);" 
+          />
+          <img
+            src="https://assets.adidas.com/images/w_600,f_auto,q_auto/ed6de4d1ce9a4a2693eaac5a012086b6_9366/Essentials_Big_Logo_Tee_Blue_GK9122_01_laydown.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen3', this);" 
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$13</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen3')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_view" id="section4">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(4);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://u-mercari-images.mercdn.net/photos/m98022461722_1.jpg?width=3840&quality=75&format=pjpg&auto=webp&_=1680319983"
+            alt=""
+            class="main_img"
+            id="imagen4"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://u-mercari-images.mercdn.net/photos/m98022461722_1.jpg?width=3840&quality=75&format=pjpg&auto=webp&_=1680319983"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen4', this);" 
+          />
+          <img
+            src="https://assets.adidas.com/images/w_600,f_auto,q_auto/a0a96d45c35140abb7adab7c010ccaf3_9366/Camiseta_Titular_Colombia_20-21_Amarillo_FT1476_01_laydown.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen4', this);"
+          />
+          <img
+            src="https://assets.adidas.com/images/w_600,f_auto,q_auto/7aaeb7c7468443a49fd6ab73012f0292_9366/Camiseta_Titular_Seleccion_Colombia_Amarillo_FT1474_01_laydown.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen4', this);"
+          />
+          <img
+            src="https://mirodeportes.com/wp-content/uploads/2018/12/adidas_colombia_amarilla_loca.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen4', this);"
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$12</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen4')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_view" id="section5">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(5);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ccfac127187d4b80ba16abac00dce8da_9366/Camiseta_UNISEX_Azul_GD2802_01_laydown.jpg"
+            alt=""
+            class="main_img"
+            id="imagen5"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ccfac127187d4b80ba16abac00dce8da_9366/Camiseta_UNISEX_Azul_GD2802_01_laydown.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen5', this);"
+          />
+          <img
+            src="https://assets.adidas.com/images/w_600,f_auto,q_auto/63eea8f6790145d5a04fa9e60108ed90_9366/Camiseta_Monogram_Square_Azul_ED7044_01_laydown.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen5', this);"
+          />
+          <img
+            src="https://padelmania.com/1033671-large_default/camiseta-adidas-m-tns-ao-g-ht5223-adidas.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen5', this);"
+          />
+          <img
+            src="https://www.tradeinn.com/f/13854/138541836/adidas-originals-camiseta-gonz-photo.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen5', this);"
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$13</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen5')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_view" id="section6">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(6);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0413/0416/2471/products/HD6875_APP_photo_back-center_white.jpg?v=1678281752"
+            alt=""
+            class="main_img"
+            id="imagen6"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0413/0416/2471/products/HD6875_APP_photo_back-center_white.jpg?v=1678281752"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen6', this);"
+          />
+          <img
+            src="https://img.ks-sport.cz/vel4/5/59/59592640.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen6', this);"
+          />
+          <img
+            src="https://cdn.shopify.com/s/files/1/0413/0416/2471/products/HD6875_APP_photo_back-center_white.jpg?v=1678281752"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen6', this);"
+          />
+          <img
+            src="https://cdn.shopify.com/s/files/1/0413/0416/2471/products/HD6875_APP_photo_back-center_white.jpg?v=1678281752"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen6', this);"
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$12</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen6')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_view" id="section7">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(7);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://m.media-amazon.com/images/I/21vbmibiaNL._AC_UY1100_.jpg"
+            alt=""
+            class="main_img"
+            id="imagen7"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://m.media-amazon.com/images/I/21vbmibiaNL._AC_UY1100_.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen7', this);"
+          />
+          <img
+            src="https://assets.adidas.com/images/w_600,f_auto,q_auto/be70f79f9ce043f6ab7dac5a01296bb2_9366/Essentials_Embroidered_Small_Logo_Tee_Grey_GK9641_01_laydown.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen7', this);"
+          />
+          <img
+            src="https://falabella.scene7.com/is/image/FalabellaCO/4188270_1?wid=800&hei=800&qlt=70"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen7', this);"
+          />
+          <img
+            src="https://falabella.scene7.com/is/image/FalabellaCO/3739558_1?wid=800&hei=800&qlt=70"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen7', this);"
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$13</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen7')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_view" id="section8">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(8);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://assetmanagerpim-res.cloudinary.com/images/w_1560/q_100/57b5b5805ab44ae3affbac8700be02e2_9366/GJ9966_01_laydown.WebP"
+            alt=""
+            class="main_img"
+            id="imagen8"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://assetmanagerpim-res.cloudinary.com/images/w_1560/q_100/57b5b5805ab44ae3affbac8700be02e2_9366/GJ9966_01_laydown.WebP"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen8', this);"
+          />
+          <img
+            src="https://www.tradeinn.com/f/13792/137927020/adidas-own-the-run-3-stripes-running-%D0%BA%D0%BE%D1%80%D0%BE%D1%82%D0%BA%D0%B8%D0%B9-%D0%A0%D1%83%D0%BA%D0%B0%D0%B2-%D0%A4%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D0%BA%D0%B0.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen8', this);"
+          />
+          <img
+            src="https://www.tradeinn.com/f/13766/137667932/adidas-run-it-3-stripes-%D0%A4%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D0%BA%D0%B0-%D1%81-%D0%BA%D0%BE%D1%80%D0%BE%D1%82%D0%BA%D0%B8%D0%BC-%D1%80%D1%83%D0%BA%D0%B0%D0%B2%D0%BE%D0%BC.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen8', this);"
+          />
+          <img
+            src="https://www.tradeinn.com/f/13842/138423703/adidas-3-stripes-%D0%A4%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D0%BA%D0%B0-%D0%A1-%D0%9A%D0%BE%D1%80%D0%BE%D1%82%D0%BA%D0%B8%D0%BC-%D0%A0%D1%83%D0%BA%D0%B0%D0%B2%D0%BE%D0%BC.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen8', this);"
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$12</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen8')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_view" id="section9">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(9);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://falabella.scene7.com/is/image/FalabellaCO/50570166_2?wid=800&hei=800&qlt=70"
+            alt=""
+            class="main_img"
+            id="imagen9"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://falabella.scene7.com/is/image/FalabellaCO/50570166_2?wid=800&hei=800&qlt=70"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen9', this);"
+          />
+          <img
+            src="https://falabella.scene7.com/is/image/FalabellaCO/50570166_2?wid=800&hei=800&qlt=70"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen9', this);"
+          />
+          <img
+            src="https://i1.t4s.cz/products/aj0998-411/178193.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen9', this);"
+          />
+          <img
+            src="https://m.media-amazon.com/images/I/51Th9gYVxIL._AC_UY350_.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen9', this);"
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$13</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen9')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_view" id="section10">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(10);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://www.innvictus.com/medias/playera-nike-sportswear-in-BV7595-886-1.jpg?context=bWFzdGVyfGltYWdlc3w3Mjk2OHxpbWFnZS9qcGVnfGltYWdlcy9oNDkvaGU2Lzk4MDg0ODY1MzExMDIuanBnfGFkNjVkMTQ0NzNiNmY0ZWI5ZWJiN2JlNjViYmUyMzdmOGJlNWI0OGY1N2ZkYWJkN2ViMDhlZWFkNjQ0YzFiOGM"
+            alt=""
+            class="main_img"
+            id="imagen10"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://www.innvictus.com/medias/playera-nike-sportswear-in-BV7595-886-1.jpg?context=bWFzdGVyfGltYWdlc3w3Mjk2OHxpbWFnZS9qcGVnfGltYWdlcy9oNDkvaGU2Lzk4MDg0ODY1MzExMDIuanBnfGFkNjVkMTQ0NzNiNmY0ZWI5ZWJiN2JlNjViYmUyMzdmOGJlNWI0OGY1N2ZkYWJkN2ViMDhlZWFkNjQ0YzFiOGM"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen10', this);"
+          />
+          <img
+            src="https://www.innvictus.com/medias/playera-nike-sportswear-in-BV7595-011-1.jpg?context=bWFzdGVyfGltYWdlc3w3MjM1M3xpbWFnZS9qcGVnfGltYWdlcy9oNmYvaDYyLzk2NzQwNTIzMzc2OTQuanBnfGRiMzQxYTIwNGVmMDIyZDNhM2M1OWMwOTY1Yzg3MTNmOGQ5NjJhNDVlNGM4YzdmZjU5YzcyODY5NDM1NzI1MmI"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen10', this);"
+          />
+          <img
+            src="https://www.innvictus.com/medias/playera-nike-sportswear-in-BV7595-100-1.png?context=bWFzdGVyfGltYWdlc3wxMDY5NDN8aW1hZ2UvcG5nfGltYWdlcy9oM2QvaGVlLzk4NDgyODkwMzQyNzAucG5nfDFlMmI5NGM4MGY5YjJiZGZhMmYwMGEwYjQxZWIzZjFkYmM5NzBkYWEzZWU5NzU5MTZjMDc4NGQyMmVkZmFjNWU"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen10', this);"
+          />
+          <img
+            src="https://www.innvictus.com/medias/playera-nike-sportswear-in-BV7595-011-1.jpg?context=bWFzdGVyfGltYWdlc3w3NzczfGltYWdlL2pwZWd8aW1hZ2VzL2gwNS9oYjIvOTY3NDA1MjY2NTM3NC5qcGd8MWJhZDI4MGFlZTcyNDg4ZjhlOWY3MGU0MTZiYmQ2NDllZmY0MjkyZDM2ZWEzM2QxNGY3MmI5ZWJjOTQwNjMwMw"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen10', this);"
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$12</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen10')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!--De aqui en adelante son la soguiente sección de las camisetas-->
+    <section class="product_view" id="section11">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(11);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://simg.nicepng.com/png/small/816-8165799_camisa-manga-larga-camisa-de-vestir-de-rayas.png"
+            alt=""
+            class="main_img"
+            id="imagen11"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://preview.free3d.com/img/2018/11/2202379144212251963/j8kyygnw.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen11', this);"
+          />
+          <img
+            src="https://preview.free3d.com/img/2018/11/2202379149178307900/v864iw42.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen11', this);"
+          />
+          <img
+            src="https://preview.free3d.com/img/2018/11/2202379144212251963/j8kyygnw.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen11', this);"
+          />
+          <img
+            src="https://preview.free3d.com/img/2018/11/2202379144212251963/j8kyygnw.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen11', this);"
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$13</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen11')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_view" id="section12">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(12);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://cdnebasnet.com/data/cache/opt_jpg/eshop/314/images/products/i/4/5/p45/0000-jach0-12177780lb-1-1600801871-350x350.jpg"
+            alt=""
+            class="main_img"
+            id="imagen12"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://cdnebasnet.com/data/cache/opt_jpg/eshop/314/images/products/i/4/5/p45/0000-jach0-12177780lb-1-1600801871-350x350.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen12', this);"
+          />
+          <img
+            src="https://cdnebasnet.com/data/cache/opt_jpg/eshop/314/images/products/i/4/5/p45/0000-jach0-12177780lb-1-1600801871-350x350.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen12', this);"
+          />
+          <img
+            src="https://cdnebasnet.com/data/cache/opt_jpg/eshop/314/images/products/i/4/5/p45/0000-jach0-12177780lb-1-1600801871-350x350.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen12', this);"
+          />
+          <img
+            src="https://cdnebasnet.com/data/cache/opt_jpg/eshop/314/images/products/i/4/5/p45/0000-jach0-12177780lb-1-1600801871-350x350.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen12', this);"
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$12</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen12')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_view" id="section13">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(13);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdTcxtUZzoTlowjnVVZ1vk9m0gzjRR7uCfYiH0Hg7UGpbZRemMDyv0E2kAqu8Go8TIMFo&usqp=CAU"
+            alt=""
+            class="main_img"
+            id="imagen13"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdTcxtUZzoTlowjnVVZ1vk9m0gzjRR7uCfYiH0Hg7UGpbZRemMDyv0E2kAqu8Go8TIMFo&usqp=CAU"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen13', this);"
+          />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdTcxtUZzoTlowjnVVZ1vk9m0gzjRR7uCfYiH0Hg7UGpbZRemMDyv0E2kAqu8Go8TIMFo&usqp=CAU"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen13', this);"
+          />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdTcxtUZzoTlowjnVVZ1vk9m0gzjRR7uCfYiH0Hg7UGpbZRemMDyv0E2kAqu8Go8TIMFo&usqp=CAU"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen13', this);"
+          />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdTcxtUZzoTlowjnVVZ1vk9m0gzjRR7uCfYiH0Hg7UGpbZRemMDyv0E2kAqu8Go8TIMFo&usqp=CAU"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen13', this);"
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$13</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen13')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product_view" id="section14">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(14);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://images.beautifulhalo.com/images/392x588/202108/L/men-s-formal-shirt-polka-dot-print-long-sleeve-spread-collar-button-up-fitted-shirt_1627990362888.jpg"
+            alt=""
+            class="main_img"
+            id="imagen14"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://images.beautifulhalo.com/images/392x588/202108/L/men-s-formal-shirt-polka-dot-print-long-sleeve-spread-collar-button-up-fitted-shirt_1627990362888.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen14', this);"
+          />
+          <img
+            src="https://images.beautifulhalo.com/images/392x588/202108/L/men-s-formal-shirt-polka-dot-print-long-sleeve-spread-collar-button-up-fitted-shirt_1627990362888.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen14', this);"
+          />
+          <img
+            src="https://images.beautifulhalo.com/images/392x588/202108/L/men-s-formal-shirt-polka-dot-print-long-sleeve-spread-collar-button-up-fitted-shirt_1627990362888.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen14', this);"
+          />
+          <img
+            src="https://images.beautifulhalo.com/images/392x588/202108/L/men-s-formal-shirt-polka-dot-print-long-sleeve-spread-collar-button-up-fitted-shirt_1627990362888.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen14', this);"
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$12</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen14')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_view" id="section15">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(15);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://http2.mlstatic.com/D_NQ_NP_939141-CBT48083157403_102021-O.jpg"
+            alt=""
+            class="main_img"
+            id="imagen15"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://http2.mlstatic.com/D_NQ_NP_939141-CBT48083157403_102021-O.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen15', this);"
+          />
+          <img
+            src="https://http2.mlstatic.com/D_NQ_NP_939141-CBT48083157403_102021-O.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen15', this);"
+          />
+          <img
+            src="https://http2.mlstatic.com/D_NQ_NP_939141-CBT48083157403_102021-O.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen15', this);"
+          />
+          <img
+            src="https://http2.mlstatic.com/D_NQ_NP_939141-CBT48083157403_102021-O.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen15', this);"
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$13</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen15')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_view" id="section16">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(16);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://m.media-amazon.com/images/I/61aC2jyu3uL._AC_UY1100_.jpg"
+            alt=""
+            class="main_img"
+            id="imagen16"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://m.media-amazon.com/images/I/71id+wwTw-L._AC_UY1100_.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen16', this);"
+          />
+          <img
+            src="https://m.media-amazon.com/images/I/71id+wwTw-L._AC_UY1100_.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen16', this);"
+          />
+          <img
+            src="https://m.media-amazon.com/images/I/71id+wwTw-L._AC_UY1100_.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen16', this);"
+          />
+          <img
+            src="https://m.media-amazon.com/images/I/71id+wwTw-L._AC_UY1100_.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen16', this);"
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$12</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen16')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_view" id="section17">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(17);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://m.media-amazon.com/images/I/61TFCVoeYAL._AC_SL1500_.jpg"
+            alt=""
+            class="main_img"
+            id="imagen17"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://m.media-amazon.com/images/I/61boGj40XTL._AC_SL1500_.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen17', this);"
+          />
+          <img
+            src="https://m.media-amazon.com/images/I/61boGj40XTL._AC_SL1500_.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen17', this);"
+          />
+          <img
+            src="https://m.media-amazon.com/images/I/61boGj40XTL._AC_SL1500_.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen17', this);"
+          />
+          <img
+            src="https://m.media-amazon.com/images/I/61boGj40XTL._AC_SL1500_.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen17', this);"
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$13</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen17')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_view" id="section18">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(18);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://m.media-amazon.com/images/I/61cd5eAfy1L._AC_SX385_.jpg"
+            alt=""
+            class="main_img"
+            id="imagen18"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0253/9628/1399/products/fashion-brand-long-sleeve-shirt-men-formal-casual-male-dress-shirt-size-j-3xl-men-fashion-447.jpg?v=1637535720&width=1445"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen18', this);"
+          />
+          <img
+            src="https://cdn.shopify.com/s/files/1/0253/9628/1399/products/fashion-brand-long-sleeve-shirt-men-formal-casual-male-dress-shirt-size-j-3xl-men-fashion-447.jpg?v=1637535720&width=1445"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen18', this);"
+          />
+          <img
+            src="https://cdn.shopify.com/s/files/1/0253/9628/1399/products/fashion-brand-long-sleeve-shirt-men-formal-casual-male-dress-shirt-size-j-3xl-men-fashion-447.jpg?v=1637535720&width=1445"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen18', this);"
+          />
+          <img
+            src="https://cdn.shopify.com/s/files/1/0253/9628/1399/products/fashion-brand-long-sleeve-shirt-men-formal-casual-male-dress-shirt-size-j-3xl-men-fashion-447.jpg?v=1637535720&width=1445"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen18', this);"
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$12</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen18')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_view" id="section19">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(19);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://m.media-amazon.com/images/I/61vv7KAvRgL._AC_SX522_.jpg"
+            alt=""
+            class="main_img"
+            id="imagen19"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://images-eu.ssl-images-amazon.com/images/I/61X4hiwZP3L._AC_SR462,693_.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen19', this);"
+          />
+          <img
+            src="https://images-eu.ssl-images-amazon.com/images/I/61X4hiwZP3L._AC_SR462,693_.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen19', this);"
+          />
+          <img
+            src="https://images-eu.ssl-images-amazon.com/images/I/61X4hiwZP3L._AC_SR462,693_.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen19', this);"
+          />
+          <img
+            src="https://images-eu.ssl-images-amazon.com/images/I/61X4hiwZP3L._AC_SR462,693_.jpg"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen19', this);"
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$13</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen19')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product_view" id="section20">
+      <div class="product_images">
+        <div class="close_btn toggle-button">
+          <i
+            class="fa-sharp fa-solid fa-rectangle-xmark"
+            onclick="toggleSection(20);"
+          ></i>
+        </div>
+        <div class="img">
+          <img
+            src="https://m.media-amazon.com/images/I/610frx2Ci3L._AC_SL1500_.jpg"
+            alt=""
+            class="main_img"
+            id="imagen20"
+          />
+        </div>
+        <div class="img_done">
+          <img
+            src="https://i5.walmartimages.com/asr/f6be27f2-128b-4fe4-a435-4fc8be0df6f0.71207b6a6d029252e79e63ee08eeccc9.jpeg?odnHeight=432&odnWidth=320&odnBg=FFFFFF"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen20', this);"
+          />
+          <img
+            src="https://i5.walmartimages.com/asr/f6be27f2-128b-4fe4-a435-4fc8be0df6f0.71207b6a6d029252e79e63ee08eeccc9.jpeg?odnHeight=432&odnWidth=320&odnBg=FFFFFF"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen20', this);"
+          />
+          <img
+            src="https://i5.walmartimages.com/asr/f6be27f2-128b-4fe4-a435-4fc8be0df6f0.71207b6a6d029252e79e63ee08eeccc9.jpeg?odnHeight=432&odnWidth=320&odnBg=FFFFFF"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen20', this);"
+          />
+          <img
+            src="https://i5.walmartimages.com/asr/f6be27f2-128b-4fe4-a435-4fc8be0df6f0.71207b6a6d029252e79e63ee08eeccc9.jpeg?odnHeight=432&odnWidth=320&odnBg=FFFFFF"
+            alt=""
+            class="thumbnail"
+            onclick="changeMainImage('imagen20', this);"
+          />
+        </div>
+      </div>
+      <div class="product_information">
+        <div class="title">Home / Tshirt</div>
+        <div class="subtitle">Men's Fashion Tshirt</div>
+        <div class="price">$12</div>
+        <div class="select">
+          <input type="text" class="Media" placeholder="Write Size" />
+        </div>
+        <div class="add_car">
+          <input type="number" value="1" id="quantity1" />
+          <button onclick="addToCart('imagen20')">Add to Cart</button>
+        </div>
+        <div class="description">
+          <div class="title2">Product Details</div>
+          <div class="desc">
+            Introducing the Adidas shirt, a modern and versatile garment that
+            combines style, quality and comfort. Designed for sports and fashion
+            lovers, this shirt is perfect both for your daily activities and for
+            your training sessions. With a modern and slim fit, the Adidas shirt
+            highlights your figure and provides a stylish appearance. Its
+            classic design features the iconic Adidas logo on the chest, giving
+            it a distinctive and authentic touch. Plus, it's available in a wide
+            range of colors to suit your personal style.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--FREE SECTION THE DOLLARS FROM THE WITH NIN-->
+    <section class="information" id="INFORMATION">
+      <div class="init">
+        <div class="information_init">
+          <div class="information_sect">
+            <div class="img"><img src="images/pago.jpg" alt="" /></div>
+            <div class="title">Free Shipping</div>
+          </div>
+        </div>
+        <div class="information_init">
+          <div class="information_sect">
+            <div class="img"><img src="images/order.jpg" alt="" /></div>
+            <div class="title">Online Order</div>
+          </div>
+        </div>
+        <div class="information_init">
+          <div class="information_sect">
+            <div class="img"><img src="images/save.jpg" alt="" /></div>
+            <div class="title">Save Money</div>
+          </div>
+        </div>
+        <div class="information_init">
+          <div class="information_sect">
+            <div class="img"><img src="images/sale.jpg" alt="" /></div>
+            <div class="title">Promotions</div>
+          </div>
+        </div>
+        <div class="information_init">
+          <div class="information_sect">
+            <div class="img"><img src="images/happy.jpg" alt="" /></div>
+            <div class="title">Happy Sell</div>
+          </div>
+        </div>
+        <div class="information_init">
+          <div class="information_sect">
+            <div class="img"><img src="images/f24.jpg" alt="" /></div>
+            <div class="title">F24/7 Support</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Products" id="PRODUCT">
+      <div class="titles">
+        <div class="title">Feature products</div>
+        <div class="subtitle">Summer Collection New Morden Design</div>
+      </div>
+      <div class="products_feactures">
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://www.vybavenitrost.cz/image/?w=450&h=450&i=https://www.vybavenitrost.cz/products/images/48/48-adidas-chlapecke-tricko-adidas-bile-4-1.jpg"
+              alt=""
+              onclick="toggleSection(1);"
+              class="toggle-button"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$13</div>
+              <div class="car" onclick="toggleSection(1);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://i.pinimg.com/236x/a7/82/bf/a782bf5c9a1a1697185e17f15ee5b364.jpg"
+              alt=""
+              onclick="toggleSection(2);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$12</div>
+              <div class="car" onclick="toggleSection(2);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://down-co.img.susercontent.com/file/sg-11134201-7qveu-lguu70td6bqva4_tn"
+              alt=""
+              onclick="toggleSection(3);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$13</div>
+              <div class="car" onclick="toggleSection(3);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://www.oriontenis.com/wp-content/uploads/2022/08/HB9170_1.jpg"
+              alt=""
+              onclick="toggleSection(4);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$12</div>
+              <div class="car" onclick="toggleSection(4)">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ccfac127187d4b80ba16abac00dce8da_9366/Camiseta_UNISEX_Azul_GD2802_01_laydown.jpg"
+              alt=""
+              onclick="toggleSection(5);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$13</div>
+              <div class="car" onclick="toggleSection(5);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0413/0416/2471/products/HD6875_APP_photo_back-center_white.jpg?v=1678281752"
+              alt=""
+              onclick="toggleSection(6);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$12</div>
+              <div class="car" onclick="toggleSection(6);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/0267b45988e84ce1a784ac8301035a50_9366/camiseta-aeroready-designed-to-move-sport.jpg"
+              alt=""
+              onclick="toggleSection(7);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$13</div>
+              <div class="car" onclick="toggleSection(7);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/57b5b5805ab44ae3affbac8700be02e2_9366/Camiseta_Own_the_Run_Azul_GJ9966_01_laydown.jpg"
+              alt=""
+              onclick="toggleSection(8);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$12</div>
+              <div class="car" onclick="toggleSection(8);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://falabella.scene7.com/is/image/FalabellaCO/50570166_2?wid=800&hei=800&qlt=70"
+              alt=""
+              onclick="toggleSection(9);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$13</div>
+              <div class="car" onclick="toggleSection(9);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://www.innvictus.com/medias/playera-nike-sportswear-in-BV7595-886-1.jpg?context=bWFzdGVyfGltYWdlc3w3Mjk2OHxpbWFnZS9qcGVnfGltYWdlcy9oNDkvaGU2Lzk4MDg0ODY1MzExMDIuanBnfGFkNjVkMTQ0NzNiNmY0ZWI5ZWJiN2JlNjViYmUyMzdmOGJlNWI0OGY1N2ZkYWJkN2ViMDhlZWFkNjQ0YzFiOGM"
+              alt=""
+              onclick="toggleSection(10);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$12</div>
+              <div class="car" onclick="toggleSection(10);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Seccion del % de descuento en demás accesorios-->
+    <section class="discount" id="DISCOUNT">
+      <div class="titles">
+        <div class="title">Repair Services</div>
+        <div class="subtitle">
+          Up to <span>70% off</span>- All t-shirts & Accessories
+        </div>
+      </div>
+      <button class="button">Explore More</button>
+    </section>
+    <!--Seccion de sacos-->
+    <section class="Products" id="PRODUCTS2">
+      <div class="titles">
+        <div class="title">New Arrivals</div>
+        <div class="subtitle">Summer Collection New Morden Design</div>
+      </div>
+      <div class="products_feactures">
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://simg.nicepng.com/png/small/816-8165799_camisa-manga-larga-camisa-de-vestir-de-rayas.png"
+              alt=""
+              onclick="toggleSection(11);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$13</div>
+              <div class="car" onclick="toggleSection(11);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://cdnebasnet.com/data/cache/opt_jpg/eshop/314/images/products/i/4/5/p45/0000-jach0-12177780lb-1-1600801871-350x350.jpg"
+              alt=""
+              onclick="toggleSection(12);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$12</div>
+              <div class="car" onclick="toggleSection(12);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdTcxtUZzoTlowjnVVZ1vk9m0gzjRR7uCfYiH0Hg7UGpbZRemMDyv0E2kAqu8Go8TIMFo&usqp=CAU"
+              alt=""
+              onclick="toggleSection(13);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$13</div>
+              <div class="car" onclick="toggleSection(13);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkLuaR2jnktPpZRvGp9tm2uh7tn1jmldhUP6mprQhRchPQBlMXAKCK_r3J2NTknNb2zb0&usqp=CAU"
+              alt=""
+              onclick="toggleSection(14);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$12</div>
+              <div class="car" onclick="toggleSection(14);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://http2.mlstatic.com/D_NQ_NP_939141-CBT48083157403_102021-O.jpg"
+              alt=""
+              onclick="toggleSection(15);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$13</div>
+              <div class="car" onclick="toggleSection(15);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://m.media-amazon.com/images/I/61aC2jyu3uL._AC_UY1100_.jpg"
+              alt=""
+              onclick="toggleSection(16);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$12</div>
+              <div class="car" onclick="toggleSection(16);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://m.media-amazon.com/images/I/61boGj40XTL._AC_SL1500_.jpg"
+              alt=""
+              onclick="toggleSection(17);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$13</div>
+              <div class="car" onclick="toggleSection(17);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://m.media-amazon.com/images/I/61cd5eAfy1L._AC_SX385_.jpg"
+              alt=""
+              onclick="toggleSection(18);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$12</div>
+              <div class="car" onclick="toggleSection(18);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://m.media-amazon.com/images/I/61vv7KAvRgL._AC_SX522_.jpg"
+              alt=""
+              onclick="toggleSection(19);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$13</div>
+              <div class="car" onclick="toggleSection(19);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="img">
+            <img
+              src="https://m.media-amazon.com/images/I/610frx2Ci3L._AC_SL1500_.jpg"
+              alt=""
+              onclick="toggleSection(20);"
+            />
+          </div>
+          <div class="product_content">
+            <div class="marca">Adidas</div>
+            <div class="title">Cartoon Atronaut T-shirt</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="buttons">
+              <div class="price">$13</div>
+              <div class="car" onclick="toggleSection(20);">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Sección de imagenes y descuentos y anuncios-->
+    <div class="container_images" id="IMAGES">
+      <div class="container_one" id="container_one">
+        <div class="titles">
+          <div class="title">Crazy deals</div>
+          <div class="subtitle">Buy 1 get 1 free</div>
+          <div class="resubtitle">
+            The best classic dress iin on sale at cara
+          </div>
+          <button>Learn More</button>
+        </div>
+      </div>
+      <div class="container_one" id="container_two">
+        <div class="titles">
+          <div class="title">spring/summer</div>
+          <div class="subtitle">upcomming season</div>
+          <div class="resubtitle">
+            The beast classic dress in on sale at carr
+          </div>
+          <button>Collection</button>
+        </div>
+      </div>
+      <div class="container_two" id="container_three">
+        <div class="titles">
+          <div class="title">SESONAL SALE</div>
+          <div class="subtitle">Winter Collection - 50% OFF</div>
+        </div>
+      </div>
+      <div class="container_two" id="container_four">
+        <div class="titles">
+          <div class="title">NEW FOOTWEAR COLLECTION</div>
+          <div class="subtitle">Spring / Summer 2023</div>
+        </div>
+      </div>
+      <div class="container_two" id="container_five">
+        <div class="titles">
+          <div class="title">T-SHIRTS</div>
+          <div class="subtitle">New Trendy Prinhln</div>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="modal_delete">
-    <div class="form">
-      <div class="end">
-        <span class="edit closeBTN">X</span>
-      </div>
-
-      <div class="info">
-        <span class="title">Agregar gastos</span>
-        <p class="description">Porfavor escribe el monto que deseas restar de tu disponible</p>
-      </div>
-      <form class="deleteForm newInputs">
-        <div class="input_field">
-          <input type="text" placeholder="0">
-          <i class="fa-solid fa-dollar-sign"></i>
+    <!--Seccion de contacto-->
+    <div class="contact" id="CONTACT">
+      <div class="contact_titles">
+        <div class="title">Sign Up For Newsletters</div>
+        <div class="subtitle">
+          Get E-mail updates about our latest shop and
+          <span>Specials offers</span>
         </div>
-        <div class="input_field">
-          <input type="text" placeholder="Descripción" class="descripcion">
-          <i class="fa-solid fa-message i"></i>
-        </div>
-        <input type="submit" class="value" value="Restar">
-      </form>
-
+      </div>
+      <div class="contact_field">
+        <input type="text" class="email" placeholder="Your Email" />
+        <input type="submit" class="submit" value="Sign Up" />
+      </div>
     </div>
-  </div>
 
-
-  <div class="modal_one">
-    <div class="form">
-      <div class="end">
-        <span class="edit close">X</span>
-      </div>
-
-      <div class="info">
-        <span class="title">Agregar presupuesto</span>
-        <p class="description">Porfavor escribe el monto que deseas agregar al disponible</p>
-      </div>
-      <form class="inputs newInputs">
-        <div class="input_field">
-          <input type="text" placeholder="0" class="pres_add">
-          <i class="fa-solid fa-dollar-sign"></i>
+    <!--Seccion final footer-->
+    <footer class="footer" id="Footer">
+      <div class="one">
+        <div class="logo">ARSHOP</div>
+        <div class="titles">Contact</div>
+        <div class="title">
+          <span>Address</span> 562 wellington Road, street 32, San Francisco
         </div>
-        <input type="submit" class="value" value="Agregar">
-      </form>
-
-    </div>
-  </div>
-
-
-
-
-</body>
-
-<script src="JS/main.js"></script>
-
+        <div class="title">
+          <span>Phone</span> +01 2222 365 /(+91)01 2345 6789
+        </div>
+        <div class="title"><span>Hours</span> 10:00 - 18:00 Man - Sat</div>
+        <div class="titles">Follow Us</div>
+        <div class="icons">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-pinterest"></i>
+          <i class="fa-brands fa-youtube"></i>
+        </div>
+      </div>
+      <div class="two">
+        <div class="titles">About</div>
+        <div class="title"><a href="#">About Us</a></div>
+        <div class="title"><a href="#">Delivery information</a></div>
+        <div class="title"><a href="#">Privacy Policy</a></div>
+        <div class="title"><a href="#">Terms & conditions</a></div>
+        <div class="title"><a href="#">Contact Us</a></div>
+      </div>
+      <div class="three">
+        <div class="titles">My account</div>
+        <div class="title"><a href="#">Sign In</a></div>
+        <div class="title"><a href="#">View cart</a></div>
+        <div class="title"><a href="#">My wishlist</a></div>
+        <div class="title"><a href="#">Track my Order</a></div>
+        <div class="title"><a href="#">Help</a></div>
+      </div>
+      <div class="four">
+        <div class="titles">Install App</div>
+        <div class="title">From App Store or Google Play</div>
+        <div class="buttons">
+          <button>
+            <i class="fa-brands fa-apple"></i> Dowload in the App Store
+          </button>
+          <button>
+            <i class="fa-brands fa-google-play"></i> Dowload in the Google Play
+          </button>
+        </div>
+        <div class="title">Secure Payment Guateways</div>
+        <div class="icons">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-paypal"></i>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.5/flickity.pkgd.min.js"></script>
+  <script src="JS/products.js"></script>
+  <script src="JS/main.js"></script>
 </html>
